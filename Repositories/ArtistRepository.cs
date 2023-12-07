@@ -30,14 +30,14 @@ namespace MusicApp.Repositories
         public async Task<Artist> CreateArtistAsync(Artist artist)
         {
             _context.Artists.Add(artist);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();//save in database
             return artist;
         }
 
         public async Task<Artist> UpdateArtistAsync(Artist artist)
         {
             _context.Artists.Update(artist);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync(); 
             return artist;
         }
 
