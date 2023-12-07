@@ -9,6 +9,7 @@ namespace MusicApp.Repositories
 {
     public class ArtistRepository : IArtistRepository
     {
+        //constructor for DB Context bec it get data from database
         private readonly AppDbContext _context;
 
         public ArtistRepository(AppDbContext context)
@@ -21,7 +22,7 @@ namespace MusicApp.Repositories
             return await _context.Artists.ToListAsync();
         }
 
-        public async Task<Artist> GetArtistByIdAsync(int id)
+         public async Task<Artist> GetArtistByIdAsync(int id)
         {
             return await _context.Artists.FindAsync(id);
         }
